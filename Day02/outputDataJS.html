@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Inner HTML </title>
+	</head>
+	<body>
+		<p>using innerHTML we can write into the HTML element.</p>
+		<p id="message1"></p>
+		
+		<p>using document.write() we can write into the HTML output</p>
+		<p id="message2"></p>
+		
+		<script>
+			document.write(5+5);
+		</script>
+		
+		<p>using window.alert() we can write into an alert box</p>
+		<p id="message3"></p>
+		
+		<script>
+			window.alert(5+6);
+		</script>
+		
+		<p>using console.log() we can write into the browser.</p>
+		<p id="message4"></p>
+		
+		
+		<script>
+			document.getElementById("message1").innerHTML = 5 + 9;
+		</script>
+	</body>
+</html> 
