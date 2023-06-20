@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 05 Q2</title>
+	</head>
+	<body>
+		<label>Enter fruit: </label>
+		<input type="text" placeholder="Insert a fruit.." id="value">
+		<input type="submit" name="submit" onclick="color_finder()" value="Submit">
+		
+		
+		<script>
+			function color_finder() {
+				let fruit = (document.getElementById("value").value).toLowerCase();
+				
+				switch(fruit){
+					case "banana":
+						window.alert("Yellow");
+						break;
+					case "pineapple":
+						window.alert("Orange");
+						break;
+					case "apple":
+						window.alert("Green");
+						break;
+					default:
+						window.alert("Can't identify fruit name.");
+						break;
+				}
+				
+			}
+		</script>
+	</body>
+</html>

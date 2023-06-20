@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 05 Q7</title>
+	</head>
+	<body>
+		<script>
+			const numbers = [80, 30, 40, 50, 23];
+			
+			numbers[2] = 78;
+			
+			const length = numbers.length;
+			
+			for (i = 0; i < length; i++) {
+				let smallest_num = numbers[i];
+				let index = i;
+				for (j = i + 1; j < length; j++) {
+					if (numbers[j] < smallest_num) {
+						smallest_num = numbers[j];
+						index = j;
+					}
+				}
+				
+				let temp = numbers[i];
+				numbers[i] = smallest_num;
+				numbers[index] = temp;
+			}
+			
+			for(i = 0; i < length; i++) {
+				document.write(numbers[i] + ", ");
+			}
+		</script>
+		
+	</body>
+</html>

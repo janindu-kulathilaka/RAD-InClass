@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 05 Q8</title>
+	</head>
+	<body>
+		<script>
+			const names = ["sadun", "kamal", "nimal", "ruwan"];
+			const temp = names;
+			const string = temp.join(" ");
+			document.write(string + "</br>");
+			
+			
+			
+			names.pop();
+			for (i = 0; i < names.length; i++) {
+				document.write(names[i] + ", ");
+			}
+			document.write("</br>");
+			names.push("nuwani");
+			for (i = 0; i < names.length; i++) {
+				document.write(names[i] + ", ");
+			}
+		</script>
+	</body>
+</html>

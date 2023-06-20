@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 05 Q4</title>
+	</head>
+	<body>
+		<label>Enter number: </label>
+		<input type="number" placeholder="Insert number here.." id="value">
+		<input type="submit" name="submit" onclick="primeNumber()" value="submit">
+		
+		<script>
+			function primeNumber() {
+				
+				let number = document.getElementById("value").value;
+				
+				let prime = true;
+				for (i = 2; i < number; i++){
+					if (number % i == 0){
+						prime = false;
+						break;
+					}
+				}
+				if (prime && number != 1) {
+					window.alert( number + " is a prime number.");
+				}
+				else {
+					window.alert( number + " is not a prime number.");
+				}
+			}
+		</script>
+	</body>
+</html>

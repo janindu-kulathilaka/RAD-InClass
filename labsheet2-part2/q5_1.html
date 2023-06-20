@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 05 Q1</title>
+	</head>
+	<body>
+		<label>Enter time: </label>
+		<input type="time" placeholder="Insert the time" id="value">
+		<input type="submit" name="submit" onclick="getGreeting()" value="Try it">
+		
+		
+		<script>
+			function getGreeting(){
+				let time = document.getElementById("value").value;
+				
+				//by using substring get the first two characters that represent the hours from time variable. 
+				let hours = parseInt(time.substring(0,2));
+				if (hours < 10) {
+					window.alert("Good Morning");
+				}
+				else if (hours < 20) {
+					window.alert("Good Day");
+				}
+				else {
+					window.alert("Good evening");
+				}
+			}
+		</script>
+	</body>
+</html>
