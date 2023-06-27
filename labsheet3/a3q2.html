@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Activity 03 Question 02,03</title>
+	</head>
+	<body>
+	
+		<p id="demo"></p>
+		<p id="demo2"></p>
+		<script>
+			function newMap(arr) {
+				const map = new Map(arr);
+				
+				return map;
+			}
+			
+			const keyValuePairs = [
+				["Name", "John"],
+				["Age", 30],
+				["City", "Colombo"],
+			];
+			
+			const map = newMap(keyValuePairs);
+			
+			document.getElementById("demo").innerHTML = map.size;
+			
+			
+			function deleteMap(map) {
+				map.delete("Age");
+				
+				return map;
+			}
+			
+			const map2 = deleteMap(map);
+			
+			document.getElementById("demo2").innerHTML = map.size;
+		</script>
+	</body>
+</html>

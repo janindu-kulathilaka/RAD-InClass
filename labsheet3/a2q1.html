@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Activity 02 Question 01</title>
+	</head>
+	<body>
+		<script>
+			function andGate(i,j) {
+			
+				if (i){
+					if (j) {
+						return true;
+					}
+					else {
+						return false;
+					}
+				}
+				else {
+					return false;
+				}
+			};
+			
+			var input1 = true;
+			var input2 = true;
+			var input3 = false;
+			
+			document.write("If both values are true: " + andGate(input1, input2) + "<br>");
+			document.write("If one value is false: " + andGate(input1, input3) + "<br>");
+			document.write("If both values are false: " + andGate(input3, input3));
+			
+			
+			
+		</script>
+	</body>
+</html>
