@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Activity 04</title>
+	</head>
+	<body>
+		<script>
+			class Employee{
+				id;
+				name;
+				address;
+				contact_number;
+				nic;
+				joined_date;
+				designation;
+				salary;
+				arrives_at;
+				leaves_at;
+				lunch_type
+				
+				
+				constructor (id, name, address, contact, nic, joined_date, designation, salary, lunchType){
+					this.id = id;
+					this.name = name;
+					this.address = address;
+					this.contact = contact;
+					this.nic = nic;
+					this.joined_date = joined_date;
+					this.designation = designation;
+					this.salary = salary;
+					this.lunchType = lunchType;
+				}
+				
+				setArriveTime(time) {
+					this.arrives_at = time;
+				}
+				
+				setLeavesTime(time) {
+					this.leave_at = time;
+				}
+				
+				
+				requestLeave(leave_date, number_of_dates, reason) {
+					console.log("Employee ID: " + this.id );
+					console.log("Employee name: " + this.name);
+					console.log("Leave date: " + leave_date);
+					console.log("Number of Dates: " + number_of_dates);
+					
+					document.write("You have got the leave for " + number_of_dates + " days<br>");
+				}
+			}
+			
+			class ContractEmployee extends Employee {
+				duration;
+				
+				constructor (id, name, address, contact, nic, joined_date, designation, salary, lunchType, duration){
+					super(id, name, address, contact, nic, joined_date, designation, salary, lunchType);
+					this.duration = duration;
+				}
+				
+				
+				requestDutyExtension(number_of_month) {
+					if (number_of_month <= 3) {
+						console.log("Employee ID: " + this.id);
+						console.log("Duty Extension: " + number_of_month);
+						
+						document.write("Duty extension approved for "+ number_of_month + "<br>")
+					}
+				}
+				
+				
+			}
+			
+			class TemporaryEmployee extends Employee {
+				duration;
+				
+				constructor (id, name, address, contact, nic, joined_date, designation, salary, lunchType, duration){
+					super(id, name, address, contact, nic, joined_date, designation, salary, lunchType);
+					this.duration = duration;
+				}
+				
+				requestDutyExtension(number_of_month) {
+					if (number_of_month <= 3) {
+						console.log("Employee ID: " + this.id);
+						console.log("Duty Extension: " + number_of_month);
+						
+						document.write("Duty extension approved for "+ number_of_month + " months<br>")
+					}
+				}
+			}
+			
+			
+			const tempEmp = new TemporaryEmployee(2001, "janindu", "kalutara", "0702926972", "20231234345", "2021/01/06", "software engineer", 600000, "egg", 0)
+			
+			
+			tempEmp.requestDutyExtension(2);
+			tempEmp.requestLeave("2023.7.7" , 2);
+			
+		</script>
+	</body>
+</html>

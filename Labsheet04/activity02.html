@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Activity 02</title>
+	</head>
+	<body>
+		<script>
+			class Rectangle {
+				width;
+				height;
+	
+				constructor(w, h) {
+					this.width = w;
+					this.height = h;
+				}
+				
+				getArea() {
+					return this.width * this.height;
+				}
+			}
+
+			const rec1 = new Rectangle(20, 10);
+			const rec2 = new Rectangle(30, 20)
+
+			document.write("Area of the rectangle 1 is " + rec1.getArea() + "<br>");
+			document.write("Height of the rectangle is " + rec2.getArea());
+		</script>
+	</body>
+</html>
