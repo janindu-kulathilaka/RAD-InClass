@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      class Student {
+        constructor(i, n, d, a, c, e) {
+          this.indexNumber = i;
+          this.name = n;
+          this.dob = d;
+          this.address = a;
+          this.contactNumber = c;
+          this.email = e;
+        }
+
+        showDetails() {
+          document.write("Index Number: " + this.indexNumber + "<br>");
+          document.write("Name: " + this.name + "<br>");
+          document.write("Date of Birth: " + this.dob + "<br>");
+          document.write("Address: " + this.address + "<br>");
+          document.write("Contact Number: " + this.contactNumber + "<br>");
+          document.write("Email: " + this.email + "<br>");
+        }
+
+        setGroup() {
+          var remainder = this.indexNumber % 4;
+          switch (remainder) {
+            case 0:
+              this.group = 1;
+              break;
+            case 1:
+              this.group = 2;
+              break;
+            case 2:
+              this.group = 3;
+              break;
+            case 3:
+              this.group = 4;
+              break;
+          }
+        }
+
+        showGroup() {
+          document.write(
+            "Group number of " + this.indexNumber + " is " + this.group + "<br>"
+          );
+        }
+      }
+
+      const person1 = new Student(
+        21001032,
+        "Janindu Kulathilaka",
+        "2001-11-12",
+        "389-D, Kadanagoda, Dodangoda, Kalutara South",
+        "0702926972",
+        "janidusandeepa2020@gmail.com"
+      );
+
+      person1.showDetails();
+      person1.setGroup();
+
+      person1.showGroup();
+    </script>
+  </body>
+</html>

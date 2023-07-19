@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <script>
+      class Examination {
+        constructor(i, mcq, essay) {
+          this.indexNumber = i;
+          this.mcqMarks = mcq;
+          this.essayMarks = essay;
+        }
+
+        getTotal() {
+          this.totalMarks = this.mcqMarks + this.essayMarks;
+        }
+
+        displayTotal() {
+          document.write("Total Marks: " + this.totalMarks + "<br>");
+        }
+
+        displayResult() {
+          if (this.totalMarks >= 50) {
+            document.write("Pass<br>");
+          } else {
+            document.write("Fail<br>");
+          }
+        }
+
+        displayGrade() {
+          if (this.totalMarks < 35) {
+            document.write("Grade W<br>");
+          } else if (this.totalMarks < 55) {
+            document.write("Grade S<br>");
+          } else if (this.totalMarks < 65) {
+            document.write("Grade C<br>");
+          } else if (this.totalMarks < 75) {
+            document.write("Grade B<br>");
+          } else {
+            document.write("Grade A<br>");
+          }
+        }
+      }
+
+      const student1 = new Examination(21001032, 35, 40);
+      student1.getTotal();
+
+      student1.displayTotal();
+      student1.displayResult();
+      student1.displayGrade();
+    </script>
+  </body>
+</html>
