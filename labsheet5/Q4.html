@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Labsheet 05 Question 04</title>
+  </head>
+  <body>
+    <script>
+      class Game {
+        constructor(level, score) {
+          this.level = level;
+          this.score = score;
+        }
+
+        // Define getWinningState as an abstract method
+        getWinningState() {
+          throw new Error(
+            "Abstract method 'getWinningState' must be implemented in the subclass."
+          );
+        }
+
+        // Move the displayWinningMessage method to the subclasses
+        displayWinningMessage() {
+          if (this.getWinningState()) {
+            document.write("<br>You have won the game.");
+          } else {
+            document.write("<br>You have lost the game.");
+          }
+        }
+      }
+
+      class CarGame extends Game {
+        constructor(level, winningScore) {
+          super(level, winningScore);
+        }
+
+        // Implement getWinningState for CarGame
+        getWinningState(score) {
+          return score >= this.score;
+        }
+
+        // Override displayWinningMessage for CarGame
+        displayWinningMessage() {
+          const score = 80;
+          if (this.getWinningState(score)) {
+            document.write("<br>You have won the car game.");
+          } else {
+            document.write("<br>You have lost the car game.");
+          }
+        }
+      }
+
+      class PuzzelGame extends Game {
+        constructor(level, winningTime) {
+          super(level, winningTime);
+        }
+
+        // Implement getWinningState for PuzzelGame
+        getWinningState(time) {
+          return time <= this.score;
+        }
+
+        // Override displayWinningMessage for PuzzelGame
+        displayWinningMessage() {
+          const time = 50;
+          if (this.getWinningState(time)) {
+            document.write("<br>You have won the puzzle game.");
+          } else {
+            document.write("<br>You have lost the puzzle game.");
+          }
+        }
+      }
+
+      class ShootingGame extends Game {
+        constructor(level, mission) {
+          super(level, mission);
+        }
+
+        // Implement getWinningState for ShootingGame
+        getWinningState(isCompleted) {
+          return isCompleted;
+        }
+
+        // Override displayWinningMessage for ShootingGame
+        displayWinningMessage() {
+          const isCompleted = true;
+          if (this.getWinningState(isCompleted)) {
+            document.write("<br>You have completed the shooting game mission.");
+          } else {
+            document.write(
+              "<br>You have not completed the shooting game mission."
+            );
+          }
+        }
+      }
+
+      const car1 = new CarGame("Beginner", 100);
+      car1.displayWinningMessage();
+
+      const puzzle1 = new PuzzelGame("Intermediate", 60);
+      puzzle1.displayWinningMessage();
+
+      const shooting1 = new ShootingGame("Advanced", "Destroy enemy base");
+      shooting1.displayWinningMessage();
+    </script>
+  </body>
+</html>

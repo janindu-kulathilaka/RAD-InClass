@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Labsheet 05 Question 03</title>
+  </head>
+  <body>
+    <script>
+      class Book {
+        discount = 0;
+
+        constructor(name, price, author, publisher) {
+          this.name = name;
+          this.price = price;
+          this.author = author;
+          this.publisher = publisher;
+        }
+
+        displayDetails() {
+          const discountPrice = this.discount * this.price;
+          const newPrice = this.price - discountPrice;
+
+          document.write("<br>Name: " + this.name);
+          document.write("<br>Price: " + this.price);
+          document.write("<br>Author: " + this.author);
+          document.write("<br>publisher: " + this.publisher);
+          document.write("<br>Discount: " + this.discount * 100 + "%");
+          document.write("<br>Discount Price: " + discountPrice);
+          document.write("<br>New Price: " + newPrice);
+        }
+      }
+
+      class EducationalBook extends Book {
+        discount = 0.2;
+
+        constructor(name, price, author, publisher) {
+          super(name, price, author, publisher);
+        }
+      }
+
+      class Novel extends Book {
+        discount = 0.15;
+
+        constructor(name, price, author, publisher) {
+          super(name, price, author, publisher);
+        }
+      }
+
+      class ShortStoryBook extends Book {
+        discount = 0.15;
+
+        constructor(name, price, author, publisher) {
+          super(name, price, author, publisher);
+        }
+      }
+      class BiographicBook extends Book {
+        discount = 0.1;
+
+        constructor(name, price, author, publisher) {
+          super(name, price, author, publisher);
+        }
+      }
+
+      const edu1 = new EducationalBook(
+        "Scala",
+        2000,
+        "Janindu Kulathilaka",
+        "janidu"
+      );
+
+      edu1.displayDetails();
+
+      document.write("<br><br>");
+      const novel1 = new Novel("Harry Potter", 2000, "JK Rowling", "Wizards");
+
+      novel1.displayDetails();
+
+      document.write("<br><br>");
+      const shortStory1 = new ShortStoryBook(
+        "Scala",
+        2000,
+        "Janindu Kulathilaka",
+        "janidu"
+      );
+
+      shortStory1.displayDetails();
+    </script>
+  </body>
+</html>
